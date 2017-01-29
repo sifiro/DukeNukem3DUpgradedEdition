@@ -30,23 +30,27 @@ namespace MegatonEdition2eduke32
             }
         }
 
-        public static void getFolder() {
+        public static string getFolder() {
             using (var fbd = new FolderBrowserDialog()){
                 DialogResult result = fbd.ShowDialog();
 
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
-                    string[] files = Directory.GetFiles(fbd.SelectedPath);
+                    return fbd.SelectedPath;
 
-                    System.Windows.Forms.MessageBox.Show("Files found: " + files.Length.ToString(), "Message");
                 }
             }
+            return null;
         }
 
         public static string SteamNotFound() {
-            if (MessageBox.Show(null, "No se ha detectado ninguna instalacion de STEAM ", "Steam not found", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show(null, "No se ha detectado ninguna instalacion de STEAM\n ¿Deseas buscar tu instalacion de Steam?", "Steam not found", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                //Process sa = Process.Start(new ProcessStartInfo("Steam://install/225140"));
+                String tmp = getFolder();
+                if (File.Exists(tmp + @"\steam.exe")) {
+                    return tmp;
+
+                }
 
             }
             else
@@ -92,6 +96,8 @@ namespace MegatonEdition2eduke32
 
                 return SteamDir + dukedirtemplate;
             }else{
+
+                
             List<String> install = new VDF.SteamConfigFile(SteamDir+@"\config\config.vdf").BaseInstallFolders;
             for (int i = 0; i < install.Count; i++){
                 if (File.Exists(install[i] + dukedirtemplate)) {

@@ -112,12 +112,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Source\Repos\VDF\VDF.csproj">
-      <Project>{8392b97a-0ea5-489b-92a3-bbe9cfccb5a5}</Project>
-      <Name>VDF</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="pics\" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +130,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VDF\VDF.csproj">
+      <Project>{8392b97a-0ea5-489b-92a3-bbe9cfccb5a5}</Project>
+      <Name>VDF</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

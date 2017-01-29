@@ -1,0 +1,3 @@
+[submodule "VDF"]
+	path = VDF
+	url = https://github.com/sanmadjack/VDF.git
