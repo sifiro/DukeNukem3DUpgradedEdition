@@ -12,6 +12,7 @@ WIP - An Installer Automated that Convert you Megaton Edition (Steam) to eduke32
    - eduke32 Downloader&Installer. 
    - HRP Downloader&Installer. 
    - Create Start-up Dialog for Startup Single Player or Multiplayer.
+   - eduke32 Updater Tool.
 
 - **Dependencies**
 	- [VDF by sanmadjack](https://github.com/sanmadjack/VDF)
